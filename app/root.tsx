@@ -8,6 +8,8 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { Nav } from "~/components/Nav";
+import { Footer } from "~/components/Footer";
 import stylesheet from "./app.css?url";
 
 export const links: Route.LinksFunction = () => [
@@ -19,7 +21,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap",
   },
   { rel: "stylesheet", href: stylesheet },
 ];
@@ -33,8 +35,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-white text-gray-800 font-sans antialiased">
-        {children}
+      <body className="bg-bg text-text font-mono antialiased">
+        <div className="max-w-2xl mx-auto px-6">
+          <Nav />
+          <main className="py-8">{children}</main>
+          <Footer />
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -59,11 +65,9 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-4">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-brand-600 mb-2">{message}</h1>
-        <p className="text-gray-600">{details}</p>
-      </div>
-    </main>
+    <div className="py-20 text-center">
+      <h1 className="text-4xl font-bold mb-2">{message}</h1>
+      <p className="text-text-secondary">{details}</p>
+    </div>
   );
 }
