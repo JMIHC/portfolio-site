@@ -1,6 +1,6 @@
 export default async (req: Request) => {
-  const { payload } = await req.json();
-  const { name, email, message } = payload.data;
+  const body = await req.json();
+  const { name, email, message } = body.data;
 
   const text = `New contact form submission:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
 
