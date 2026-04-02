@@ -55,6 +55,7 @@ export default function Contact() {
         className="space-y-6"
       >
         <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
 
         <div>
           <label htmlFor="name" className="block text-sm font-semibold mb-2">
