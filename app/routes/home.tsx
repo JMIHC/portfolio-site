@@ -562,10 +562,6 @@ export default function Home() {
       {/* CTA Section */}
       <section id="help" className="mb-4">
         <h2 className="text-xl font-bold mb-4">Want Help?</h2>
-        <p className="text-text-secondary mb-6">
-          That's the whole process. It's more approachable than it looks — give
-          it a shot.
-        </p>
         <p className="text-text-secondary mb-4">
           Not sure where to start? Book a consultation and we'll figure out your
           plan together:
