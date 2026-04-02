@@ -98,6 +98,17 @@ export default function Home() {
             access to a Mac or Windows computer for this workshop.
           </li>
           <li>
+            A <strong className="text-text">code editor</strong> like{" "}
+            <a
+              href="https://code.visualstudio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VS Code
+            </a>{" "}
+            — free and works on Mac, Windows, and Linux
+          </li>
+          <li>
             A <strong className="text-text">Claude Code subscription</strong>{" "}
             — sign up at{" "}
             <a
