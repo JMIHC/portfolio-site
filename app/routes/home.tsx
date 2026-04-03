@@ -132,6 +132,23 @@ export default function Home() {
             </a>
           </li>
         </ul>
+        <p className="text-text-secondary mt-6">
+          <strong className="text-text">On an iPad or Chromebook?</strong> You
+          can do this entire workshop using{" "}
+          <a
+            href="https://github.com/features/codespaces"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub Codespaces
+          </a>
+          , which gives you a full development environment (VS Code, terminal,
+          Node.js) in your browser — no installs needed. Start by creating a
+          new empty repository on GitHub (no README, no .gitignore), then click
+          the green "Code" button, select the "Codespaces" tab, and create one.
+          This gives you a terminal with git already connected to your repo.
+          The free tier includes 60 hours per month.
+        </p>
       </section>
 
       {/* Step 1 */}
@@ -250,6 +267,13 @@ export default function Home() {
           <code>YOUR-USERNAME</code> with your GitHub username:
         </p>
         <CodeBlock>{`git remote add origin https://github.com/YOUR-USERNAME/my-site.git\ngit push -u origin main`}</CodeBlock>
+        <p className="text-text-secondary mt-4 mb-4">
+          <strong className="text-text">Codespaces users:</strong> If you
+          created your repo and opened a Codespace in the prerequisites step,
+          git is already initialized and connected to GitHub. Just commit and
+          push:
+        </p>
+        <CodeBlock copyable>{`git add .\ngit commit -m "initial project setup"\ngit push`}</CodeBlock>
         <p className="text-text-secondary mt-4">
           {/* PLACEHOLDER: Reassure them this is a one-time setup.
               After this, updating is just commit and push. */}
