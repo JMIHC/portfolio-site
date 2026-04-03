@@ -60,13 +60,13 @@ const projects = [
     description:
       "A landing page and contact form for Nelson's computer building and repair business in New Hampshire. Simple, fast, and to the point — exactly what he needed.",
   },
-  {
-    title: "Cornyn Therapeutics",
-    url: "https://www.cornyntherapeutics.ltd/",
-    tech: "Gatsby.js, Sass, HTML5UP Design",
-    description:
-      "A landing page for Charles Cornyn's massage therapy practice in Chicago. Connects visitors to his scheduling system.",
-  },
+  // {
+  //   title: "Cornyn Therapeutics",
+  //   url: "https://www.cornyntherapeutics.ltd/",
+  //   tech: "Gatsby.js, Sass, HTML5UP Design",
+  //   description:
+  //     "A landing page for Charles Cornyn's massage therapy practice in Chicago. Connects visitors to his scheduling system.",
+  // },
 ];
 
 export default function Work() {
