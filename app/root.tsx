@@ -34,6 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script defer data-domain="johnnycornyn.com" src="https://plausible.io/js/script.js"></script>
       </head>
       <body className="bg-bg text-text font-mono antialiased">
         <div className="max-w-2xl mx-auto px-6">
