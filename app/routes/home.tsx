@@ -45,10 +45,10 @@ export default function Home() {
             <a href="#step-4">Build with Claude Code</a>
           </li>
           <li>
-            <a href="#step-5">Deploy to Netlify</a>
+            <a href="#step-5">Test and Audit with Playwright</a>
           </li>
           <li>
-            <a href="#step-6">Test and Audit with Playwright</a>
+            <a href="#step-6">Deploy to Netlify</a>
           </li>
           <li>
             <a href="#step-7">Update and Maintain Your Site</a>
@@ -74,6 +74,17 @@ export default function Home() {
             </a>
           </li>
           <li>
+            <strong className="text-text">Git</strong> — already installed on
+            Mac and Linux. Windows users, download it from{" "}
+            <a
+              href="https://git-scm.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              git-scm.com
+            </a>
+          </li>
+          <li>
             <strong className="text-text">Node.js</strong> installed on your
             computer —{" "}
             <a
@@ -85,8 +96,10 @@ export default function Home() {
             </a>
           </li>
           <li>
-            A terminal — already on your computer (Terminal on Mac, PowerShell
-            on Windows). On a Chromebook, you'll need{" "}
+            A <strong className="text-text">terminal</strong> — already on your
+            computer. On Mac, open the Terminal app (search for "Terminal" in
+            Spotlight). On Windows, open PowerShell (search for "PowerShell" in
+            the Start menu). On a Chromebook, you'll need{" "}
             <a
               href="https://support.google.com/chromebook/answer/9145439"
               target="_blank"
@@ -143,11 +156,12 @@ export default function Home() {
             GitHub Codespaces
           </a>
           , which gives you a full development environment (VS Code, terminal,
-          Node.js) in your browser — no installs needed. Start by creating a
-          new empty repository on GitHub (no README, no .gitignore), then click
-          the green "Code" button, select the "Codespaces" tab, and create one.
-          This gives you a terminal with git already connected to your repo.
-          The free tier includes 60 hours per month.
+          Node.js) in your browser — no installs needed. Create a new empty
+          repository on GitHub (no README, no .gitignore), then click the green
+          "Code" button, select the "Codespaces" tab, and create one. This
+          gives you a terminal with git already connected to your repo. The
+          free tier includes 60 hours per month. If you're using Codespaces,
+          skip Step 2 — git and GitHub are already set up for you.
         </p>
       </section>
 
@@ -160,65 +174,18 @@ export default function Home() {
               a dev server, and a build system ready to go. */}
           We'll use React Router to scaffold a new project. This gives you a
           modern website with page routing, a development server, and everything
-          you need to build and deploy. Open your terminal and run:
+          you need to build and deploy at Netlify. Open your terminal and run:
         </p>
-        <CodeBlock copyable>npx create-react-router@latest my-site</CodeBlock>
+        <CodeBlock copyable>npx create-react-router@latest --template netlify/react-router-template</CodeBlock>
         <p className="text-text-secondary mt-4 mb-4">
           Follow the prompts — you can accept the defaults. Then move into
           your new project and install dependencies:
         </p>
         <CodeBlock copyable>{`cd my-site\nnpm install`}</CodeBlock>
 
-        <h3 className="text-lg font-bold mt-8 mb-3">Add TailwindCSS</h3>
-        <p className="text-text-secondary mb-4">
-          {/* PLACEHOLDER: Explain what Tailwind is — a utility-first CSS
-              framework that lets you style everything with classes
-              directly in your HTML. No separate CSS files to manage. */}
-          TailwindCSS lets you style your site by adding classes directly to your
-          markup — no switching between files, no naming things. Install it:
-        </p>
-        <CodeBlock copyable>npm install tailwindcss @tailwindcss/vite</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          Then add the Tailwind plugin to your <code>vite.config.ts</code>:
-        </p>
-        <CodeBlock>{`import tailwindcss from "@tailwindcss/vite";\n\nexport default defineConfig({\n  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],\n});`}</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          And add the Tailwind import to the top of <code>app/app.css</code>:
-        </p>
-        <CodeBlock copyable>@import "tailwindcss";</CodeBlock>
-        <p className="text-text-secondary mt-4">
-          {/* PLACEHOLDER: Mention that Claude Code can handle all of this
-              setup for you if you'd rather not do it manually. */}
-          That's it — Tailwind is ready. Or, skip the manual setup entirely and
-          ask Claude Code to do it for you in Step 4.
-        </p>
-
-        <h3 className="text-lg font-bold mt-8 mb-3">Using a template</h3>
-        <p className="text-text-secondary mb-4">
-          {/* PLACEHOLDER: Explain that templates give you a head start —
-              pre-built layouts, components, and styling so you're not
-              starting from a blank page. */}
-          If you'd rather start with something pre-built instead of a blank
-          project, React Router has official templates. These come with layouts,
-          components, and styling already in place:
-        </p>
-        <CodeBlock copyable>npx create-react-router@latest my-site --template react-router-templates/default</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          You can browse available templates at{" "}
-          <a
-            href="https://github.com/react-router-templates"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            github.com/react-router-templates
-          </a>
-          . Pick one that's close to what you want and customize from there — it's
-          often faster than building everything from scratch.
-        </p>
-
         <h3 className="text-lg font-bold mt-8 mb-3">Start the dev server</h3>
         <p className="text-text-secondary mb-4">
-          Once your project is set up (with or without a template), start the
+          Once your project is set up, start the
           dev server:
         </p>
         <CodeBlock copyable>npm run dev</CodeBlock>
@@ -230,8 +197,10 @@ export default function Home() {
           <code>http://localhost:5173</code> in your browser. You should see the
           default welcome page (or your template's starter page). Your project
           files are in the <code>app/</code> folder — that's where you'll do most
-          of your work. Keep this dev server running in the background — it
-          updates live as you make changes.
+          of your work. Keep this dev server running — it updates live as you
+          make changes. Open a second terminal tab for the commands in the next
+          steps (on Mac, press <code>Cmd+T</code> in Terminal; on Windows,
+          click the <code>+</code> tab in PowerShell).
         </p>
       </section>
 
@@ -250,9 +219,10 @@ export default function Home() {
           site later.
         </p>
         <p className="text-text-secondary mb-4">
-          Initialize a git repo and make your first commit:
+          In your second terminal tab, navigate to your project and initialize
+          a git repo:
         </p>
-        <CodeBlock copyable>{`git init\ngit add .\ngit commit -m "initial project setup"`}</CodeBlock>
+        <CodeBlock copyable>{`cd my-site\ngit init\ngit add .\ngit commit -m "initial project setup"`}</CodeBlock>
         <p className="text-text-secondary mt-4 mb-4">
           Now create a new repository on GitHub. Go to{" "}
           <a
@@ -330,19 +300,31 @@ export default function Home() {
           question, you describe what you want and Claude builds it.
         </p>
         <p className="text-text-secondary mb-4">
-          Install it and start a session in your project:
+          Install it by running this in your terminal:
         </p>
-        <CodeBlock copyable>npm install -g @anthropic-ai/claude-code</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-2">
-          If you get a permissions error on Mac, try:
+        <p className="text-text-secondary text-sm mb-2">
+          <strong className="text-text">macOS / Linux / WSL:</strong>
         </p>
-        <CodeBlock copyable>sudo npm install -g @anthropic-ai/claude-code</CodeBlock>
+        <CodeBlock copyable>curl -fsSL https://claude.ai/install.sh | bash</CodeBlock>
+        <p className="text-text-secondary text-sm mt-4 mb-2">
+          <strong className="text-text">Windows (CMD):</strong>
+        </p>
+        <CodeBlock copyable>curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd</CodeBlock>
+        <p className="text-text-secondary text-sm mt-4 mb-2">
+          <strong className="text-text">Windows (PowerShell):</strong>
+        </p>
+        <CodeBlock copyable>irm https://claude.ai/install.ps1 | iex</CodeBlock>
         <p className="text-text-secondary mt-4 mb-4">
-          Then start Claude Code inside your project. Make sure your dev server
-          is still running in another terminal tab so you can see changes as
-          Claude makes them:
+          Then start Claude Code in your second terminal tab (the one that
+          isn't running the dev server). Make sure you're in your project
+          folder:
         </p>
-        <CodeBlock copyable>{`cd my-site\nclaude`}</CodeBlock>
+        <CodeBlock copyable>claude</CodeBlock>
+        <p className="text-text-secondary mt-4 mb-4">
+          The first time you run Claude Code, it will ask you to log in to
+          your Anthropic account in the browser. Follow the prompts to
+          authenticate — this only happens once.
+        </p>
         <p className="text-text-secondary mt-4 mb-4">
           {/* PLACEHOLDER: Walk through an example conversation with Claude Code.
               Show how to ask it to create a page, add a component, fix a bug.
@@ -431,71 +413,20 @@ export default function Home() {
 
       {/* Step 5 */}
       <section id="step-5" className="mb-12">
-        <h2 className="text-xl font-bold mb-4">Step 5: Deploy to Netlify</h2>
-        <p className="text-text-secondary mb-4">
-          {/* PLACEHOLDER: Explain what deploying means — making your site
-              live on the internet so anyone can visit it. Netlify makes
-              this free and simple. */}
-          Deploying means putting your site on the internet so anyone can visit
-          it. Since your code is already on GitHub from Step 2, connecting to
-          Netlify only takes a minute.
-        </p>
-        <p className="text-text-secondary mb-4">
-          First, commit your latest work:
-        </p>
-        <CodeBlock copyable>{`git add .\ngit commit -m "build out site pages"\ngit push`}</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          {/* PLACEHOLDER: Walk through connecting Netlify to GitHub.
-              Describe the build settings they'll need:
-              - Build command: npm run build
-              - Publish directory: build/client */}
-          Then go to{" "}
-          <a
-            href="https://app.netlify.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            app.netlify.com
-          </a>
-          , click "Add new site," and connect your GitHub repo. Use these build
-          settings:
-        </p>
-        <CodeBlock>{`Build command: npm run build\nPublish directory: build/client`}</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          {/* PLACEHOLDER: Mention custom domains, HTTPS, and how Netlify
-              handles all of that automatically. */}
-          Netlify will build and deploy your site. You'll get a URL like{" "}
-          <code>your-site-name.netlify.app</code> immediately. You can add a
-          custom domain later in your site settings.
-        </p>
-        <p className="text-text-secondary">
-          Your site is live. Share the link — you just built and deployed a
-          website from scratch.
-        </p>
-      </section>
-
-      {/* Step 6 */}
-      <section id="step-6" className="mb-12">
         <h2 className="text-xl font-bold mb-4">
-          Step 6: Test and Audit with Playwright
+          Step 5: Test and Audit with Playwright
         </h2>
         <p className="text-text-secondary mb-4">
-          {/* PLACEHOLDER: Explain why testing matters — catching broken links,
-              making sure pages load, verifying your site works on different
-              screen sizes before your visitors find the problems. */}
-          Before you share your site with the world, make sure it actually works.
-          Playwright is a testing tool that opens a real browser and clicks through
-          your site automatically — checking that pages load, links work, and
-          nothing is broken.
+          Before you deploy, make sure your site actually works. Playwright is
+          a testing tool that opens a real browser and clicks through your site
+          automatically — checking that pages load, links work, and nothing is
+          broken.
         </p>
         <p className="text-text-secondary mb-4">
           Install Playwright in your project:
         </p>
         <CodeBlock copyable>{`npm install -D @playwright/test\nnpx playwright install`}</CodeBlock>
         <p className="text-text-secondary mt-4 mb-4">
-          {/* PLACEHOLDER: Explain that the first command adds Playwright
-              to the project, and the second downloads the browsers it
-              needs to run tests (Chromium, Firefox, WebKit). */}
           The first command adds Playwright to your project. The second downloads
           the browsers it needs to run tests — Chromium, Firefox, and WebKit.
         </p>
@@ -514,30 +445,54 @@ export default function Home() {
 
         <h3 className="text-lg font-bold mt-6 mb-3">Auditing accessibility</h3>
         <p className="text-text-secondary mb-4">
-          {/* PLACEHOLDER: Explain that accessibility means your site works
-              for everyone — screen readers, keyboard navigation, color
-              contrast, etc. */}
           You can also ask Claude Code to audit your site for accessibility
           issues — things like missing alt text, low contrast, or elements that
           can't be reached with a keyboard:
         </p>
         <CodeBlock copyable>Write a Playwright test that audits each page for accessibility issues using @axe-core/playwright</CodeBlock>
         <p className="text-text-secondary mt-4">
-          {/* PLACEHOLDER: Explain that axe-core is an accessibility testing
-              engine that checks for WCAG compliance. Claude Code will
-              install it and write the test for you. */}
           Claude Code will install the{" "}
           <code>@axe-core/playwright</code> package and write a test that scans
-          every page for WCAG violations. Fix any issues it finds before you
-          deploy — it's the easiest way to make sure your site works for everyone.
+          every page for WCAG violations. Fix any issues it finds — it's the
+          easiest way to make sure your site works for everyone.
         </p>
+      </section>
 
-        <h3 className="text-lg font-bold mt-6 mb-3">Running tests before you deploy</h3>
-        <p className="text-text-secondary">
-          Make it a habit to run your tests before pushing updates. It takes a
-          few seconds and catches problems before your visitors do:
+      {/* Step 6 */}
+      <section id="step-6" className="mb-12">
+        <h2 className="text-xl font-bold mb-4">Step 6: Deploy to Netlify</h2>
+        <p className="text-text-secondary mb-4">
+          Deploying means putting your site on the internet so anyone can visit
+          it. Since your code is already on GitHub from Step 2, connecting to
+          Netlify only takes a minute.
         </p>
-        <CodeBlock copyable>{`npx playwright test\ngit add .\ngit commit -m "update site content"\ngit push`}</CodeBlock>
+        <p className="text-text-secondary mb-4">
+          First, make sure all your latest changes are saved to GitHub. If
+          you've made changes since your last commit:
+        </p>
+        <CodeBlock copyable>{`git add .\ngit commit -m "build out site pages"\ngit push`}</CodeBlock>
+        <p className="text-text-secondary mt-4 mb-4">
+          Then go to{" "}
+          <a
+            href="https://app.netlify.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            app.netlify.com
+          </a>
+          , click "Add new site," and connect your GitHub repo. Use these build
+          settings:
+        </p>
+        <CodeBlock>{`Build command: npm run build\nPublish directory: build/client`}</CodeBlock>
+        <p className="text-text-secondary mt-4 mb-4">
+          Netlify will build and deploy your site. You'll get a URL like{" "}
+          <code>your-site-name.netlify.app</code> immediately. You can add a
+          custom domain later in your site settings.
+        </p>
+        <p className="text-text-secondary">
+          Your site is live. Share the link — you just built and deployed a
+          website from scratch.
+        </p>
       </section>
 
       {/* Step 7 */}
@@ -575,11 +530,31 @@ export default function Home() {
 
         <h3 className="text-lg font-bold mt-6 mb-3">Pushing updates live</h3>
         <p className="text-text-secondary mb-4">
-          Once you're happy with your changes, save them and push to GitHub.
-          Netlify will redeploy automatically — your site updates in about a
-          minute:
+          Once you're happy with your changes, run your tests, then save and
+          push to GitHub. Netlify will redeploy automatically — your site
+          updates in about a minute:
         </p>
-        <CodeBlock copyable>{`git add .\ngit commit -m "update contact info"\ngit push`}</CodeBlock>
+        <CodeBlock copyable>{`npx playwright test\ngit add .\ngit commit -m "update contact info"\ngit push`}</CodeBlock>
+
+        <h3 className="text-lg font-bold mt-6 mb-3">Working from a different computer</h3>
+        <p className="text-text-secondary mb-4">
+          As long as you've committed and pushed your work to GitHub, your code
+          is saved — even if you delete the folder from your computer. If you're
+          on a new machine (or just need a fresh copy), go to your repository on
+          GitHub, click the green <strong className="text-text">Code</strong>{" "}
+          button, make sure <strong className="text-text">HTTPS</strong> is
+          selected, and copy the URL. Then open a terminal and run:
+        </p>
+        <CodeBlock>git clone YOUR-COPIED-URL</CodeBlock>
+        <p className="text-text-secondary mt-4 mb-4">
+          Then move into the project and install dependencies:
+        </p>
+        <CodeBlock copyable>{`cd my-site\nnpm install`}</CodeBlock>
+        <p className="text-text-secondary mt-4">
+          That gives you a complete copy of your project, ready to go. Start the
+          dev server with <code>npm run dev</code> and pick up right where you
+          left off.
+        </p>
 
         <h3 className="text-lg font-bold mt-6 mb-3">If something goes wrong</h3>
         <p className="text-text-secondary">
