@@ -37,25 +37,28 @@ export default function Home() {
             <a href="#step-1">Install Claude Code</a>
           </li>
           <li>
-            <a href="#step-2">Scaffold Your Project</a>
+            <a href="#step-2">Add Plugins</a>
           </li>
           <li>
-            <a href="#step-3">Plan Your Site</a>
+            <a href="#step-3">Scaffold Your Project</a>
           </li>
           <li>
-            <a href="#step-4">Build Your Site</a>
+            <a href="#step-4">Plan Your Site</a>
           </li>
           <li>
-            <a href="#step-5">Set Up Git and GitHub</a>
+            <a href="#step-5">Build Your Site</a>
           </li>
           <li>
-            <a href="#step-6">Test and Audit with Playwright</a>
+            <a href="#step-6">Set Up Git and GitHub</a>
           </li>
           <li>
-            <a href="#step-7">Deploy to Netlify</a>
+            <a href="#step-7">Test and Audit with Playwright</a>
           </li>
           <li>
-            <a href="#step-8">Update and Maintain Your Site</a>
+            <a href="#step-8">Deploy to Netlify</a>
+          </li>
+          <li>
+            <a href="#step-9">Update and Maintain Your Site</a>
           </li>
           <li>
             <a href="#help">Want Help?</a>
@@ -124,7 +127,7 @@ export default function Home() {
           account first. Create a new empty repository on GitHub (no README, no
           .gitignore), then click the green "Code" button, select the
           "Codespaces" tab, and create one. The free tier includes 60 hours per
-          month. If you're using Codespaces, skip Step 5 — git and GitHub are
+          month. If you're using Codespaces, skip Step 6 — git and GitHub are
           already set up for you.
         </p>
       </section>
@@ -171,7 +174,59 @@ export default function Home() {
       {/* Step 2 */}
       <section id="step-2" className="mb-12">
         <h2 className="text-xl font-bold mb-4">
-          Step 2: Scaffold Your Project
+          Step 2: Add Plugins
+        </h2>
+        <p className="text-text-secondary mb-4">
+          Plugins give Claude Code superpowers. They connect it to documentation,
+          design tools, and other services so it can do more than just write code.
+          Install them with the <code>/install-plugin</code> command inside Claude
+          Code. Adding these now means Claude has access to up-to-date docs and
+          better design output from the very first step.
+        </p>
+
+        <h3 className="text-lg font-bold mt-6 mb-3">Context7</h3>
+        <p className="text-text-secondary mb-4">
+          Context7 gives Claude access to the latest documentation for any library
+          or framework. Instead of relying on training data that might be outdated,
+          Claude pulls the current docs in real time.
+        </p>
+        <CodeBlock copyable>/install-plugin context7</CodeBlock>
+        <p className="text-text-secondary mt-4 mb-4">
+          Once installed, Claude automatically fetches docs when you ask about a
+          library. For example:
+        </p>
+        <CodeBlock>{`> How do I add a new page in React Router v7?\n  Use the route() helper in app/routes.ts...\n\n> How do I set up a contact form with Netlify Forms?\n  Add data-netlify="true" to your form element...`}</CodeBlock>
+        <p className="text-text-secondary mt-4">
+          This matters because libraries update constantly. Context7 means Claude
+          always gives you answers based on the latest version, not something that
+          changed six months ago.
+        </p>
+
+        <h3 className="text-lg font-bold mt-6 mb-3">Frontend Design</h3>
+        <p className="text-text-secondary mb-4">
+          The frontend-design plugin helps Claude build polished, distinctive
+          interfaces. Without it, AI-generated sites tend to look generic. With
+          it, Claude produces production-grade designs with real attention to
+          typography, spacing, and visual hierarchy.
+        </p>
+        <CodeBlock copyable>/install-plugin frontend-design</CodeBlock>
+        <p className="text-text-secondary mt-4 mb-4">
+          After installing, use the <code>/frontend-design</code> command when
+          you want Claude to build or redesign a page:
+        </p>
+        <CodeBlock copyable>/frontend-design Build me a landing page for my photography business with a minimal, elegant feel</CodeBlock>
+        <p className="text-text-secondary mt-4">
+          Be descriptive about the style you want. Mention sites you like, the
+          mood you're going for, and any specific requirements like mobile
+          responsiveness or accessibility. The more context you give, the better
+          the result.
+        </p>
+      </section>
+
+      {/* Step 3 */}
+      <section id="step-3" className="mb-12">
+        <h2 className="text-xl font-bold mb-4">
+          Step 3: Scaffold Your Project
         </h2>
         <p className="text-text-secondary mb-4">
           Now you'll create a new website project. We'll use React Router with
@@ -203,9 +258,9 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Step 3 */}
-      <section id="step-3" className="mb-12">
-        <h2 className="text-xl font-bold mb-4">Step 3: Plan Your Site</h2>
+      {/* Step 4 */}
+      <section id="step-4" className="mb-12">
+        <h2 className="text-xl font-bold mb-4">Step 4: Plan Your Site</h2>
         <p className="text-text-secondary mb-4">
           Before you start building, take a few minutes to decide what your site
           needs. You don't need a detailed plan — just enough to give Claude Code
@@ -239,14 +294,14 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Step 4 */}
-      <section id="step-4" className="mb-12">
+      {/* Step 5 */}
+      <section id="step-5" className="mb-12">
         <h2 className="text-xl font-bold mb-4">
-          Step 4: Build Your Site
+          Step 5: Build Your Site
         </h2>
         <p className="text-text-secondary mb-4">
           With Claude Code running in your project, start building. Use the plan
-          from Step 3 and describe what you want:
+          from Step 4 and describe what you want:
         </p>
         <CodeBlock copyable>Create an about page with my name, a short bio, and a link back to the home page</CodeBlock>
         <p className="text-text-secondary mt-4 mb-4">
@@ -263,64 +318,18 @@ export default function Home() {
           things. It's a conversation, not a magic button — the more context you
           give, the better the results.
         </p>
-
-        <h3 className="text-lg font-bold mt-8 mb-4">Plugins</h3>
-        <p className="text-text-secondary mb-4">
-          Plugins give Claude Code superpowers. They connect it to documentation,
-          design tools, and other services so it can do more than just write code.
-          Install them with the <code>/install-plugin</code> command inside Claude
-          Code.
-        </p>
-
-        <h4 className="font-bold mt-6 mb-3">Context7</h4>
-        <p className="text-text-secondary mb-4">
-          Context7 gives Claude access to the latest documentation for any library
-          or framework. Instead of relying on training data that might be outdated,
-          Claude pulls the current docs in real time.
-        </p>
-        <CodeBlock copyable>/install-plugin context7</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          Once installed, Claude automatically fetches docs when you ask about a
-          library. For example:
-        </p>
-        <CodeBlock>{`> How do I add a new page in React Router v7?\n  Use the route() helper in app/routes.ts...\n\n> How do I set up a contact form with Netlify Forms?\n  Add data-netlify="true" to your form element...`}</CodeBlock>
-        <p className="text-text-secondary mt-4">
-          This matters because libraries update constantly. Context7 means Claude
-          always gives you answers based on the latest version, not something that
-          changed six months ago.
-        </p>
-
-        <h4 className="font-bold mt-6 mb-3">Frontend Design</h4>
-        <p className="text-text-secondary mb-4">
-          The frontend-design plugin helps Claude build polished, distinctive
-          interfaces. Without it, AI-generated sites tend to look generic. With
-          it, Claude produces production-grade designs with real attention to
-          typography, spacing, and visual hierarchy.
-        </p>
-        <CodeBlock copyable>/install-plugin frontend-design</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          After installing, use the <code>/frontend-design</code> command when
-          you want Claude to build or redesign a page:
-        </p>
-        <CodeBlock copyable>/frontend-design Build me a landing page for my photography business with a minimal, elegant feel</CodeBlock>
-        <p className="text-text-secondary mt-4">
-          Be descriptive about the style you want. Mention sites you like, the
-          mood you're going for, and any specific requirements like mobile
-          responsiveness or accessibility. The more context you give, the better
-          the result.
-        </p>
       </section>
 
-      {/* Step 5 */}
-      <section id="step-5" className="mb-12">
+      {/* Step 6 */}
+      <section id="step-6" className="mb-12">
         <h2 className="text-xl font-bold mb-4">
-          Step 5: Set Up Git and GitHub
+          Step 6: Set Up Git and GitHub
         </h2>
         <p className="text-text-secondary mb-4">
           Now that you've built something worth saving, set up version control.
           Git tracks every change you make so you can undo mistakes and see your
           project's history. GitHub stores your code online — and it's how
-          Netlify will deploy your site in Step 7.
+          Netlify will deploy your site in Step 8.
         </p>
         <p className="text-text-secondary mb-4">
           You'll need two things:
@@ -380,10 +389,10 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Step 6 */}
-      <section id="step-6" className="mb-12">
+      {/* Step 7 */}
+      <section id="step-7" className="mb-12">
         <h2 className="text-xl font-bold mb-4">
-          Step 6: Test and Audit with Playwright
+          Step 7: Test and Audit with Playwright
         </h2>
         <p className="text-text-secondary mb-4">
           Before you deploy, make sure your site actually works. Playwright is
@@ -427,9 +436,9 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Step 7 */}
-      <section id="step-7" className="mb-12">
-        <h2 className="text-xl font-bold mb-4">Step 7: Deploy to Netlify</h2>
+      {/* Step 8 */}
+      <section id="step-8" className="mb-12">
+        <h2 className="text-xl font-bold mb-4">Step 8: Deploy to Netlify</h2>
         <p className="text-text-secondary mb-4">
           Deploying means putting your site on the internet so anyone can visit
           it. You'll need a free{" "}
@@ -440,7 +449,7 @@ export default function Home() {
           >
             Netlify
           </a>{" "}
-          account. Since your code is already on GitHub from Step 5, connecting
+          account. Since your code is already on GitHub from Step 6, connecting
           to Netlify only takes a minute.
         </p>
         <p className="text-text-secondary mb-4">
@@ -472,10 +481,10 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Step 8 */}
-      <section id="step-8" className="mb-12">
+      {/* Step 9 */}
+      <section id="step-9" className="mb-12">
         <h2 className="text-xl font-bold mb-4">
-          Step 8: Update and Maintain Your Site
+          Step 9: Update and Maintain Your Site
         </h2>
         <p className="text-text-secondary mb-4">
           Every time you push to GitHub, Netlify automatically rebuilds and
