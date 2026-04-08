@@ -521,7 +521,7 @@ export default function Home() {
         </p>
         <ul className="list-disc list-inside space-y-2 text-text-secondary mb-6">
           <li>
-            <Link to="/contact" className="text-text font-bold">One-on-one consultation</Link> — $50 per hour
+            <Link to="/contact" className="text-text font-bold">One-on-one consultation</Link> — $50/hr
           </li>
         </ul>
         <p className="text-text-secondary mb-4">
