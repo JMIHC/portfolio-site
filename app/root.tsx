@@ -38,6 +38,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="bg-bg text-text font-mono antialiased">
         <div className="max-w-2xl mx-auto px-6">
+          <div className="text-sm text-center py-3 border-b border-border mt-6">
+            Free workshop Apr 15 — 551 Community Center, Grass Valley.{" "}
+            <a href="/images/johnnycornynflyer.pdf" className="underline">
+              See the flyer
+            </a>
+          </div>
           <Nav />
           <main className="py-8">{children}</main>
           <Footer />

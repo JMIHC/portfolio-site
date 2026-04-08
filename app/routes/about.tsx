@@ -25,9 +25,15 @@ export default function About() {
         </p>
 
         <p>
-          I work primarily with React, Tailwind CSS, and deployment
-          platforms like Netlify. I care about clean, accessible sites that
-          help people reach their goals.
+          I work primarily with React and React Native, Tailwind CSS, and
+          deployment platforms like Netlify. I also build real-time systems
+          with Phoenix LiveView. Lately I've been exploring autonomous agents
+          with{" "}
+          <a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener noreferrer">
+            Hermes
+          </a>
+          . I care about clean, accessible sites that help people reach their
+          goals.
         </p>
 
         <p>
