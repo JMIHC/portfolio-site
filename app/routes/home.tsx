@@ -105,31 +105,6 @@ export default function Home() {
             Claude Code is included with Claude Pro, Team, and Enterprise plans.
           </li>
         </ul>
-        <p className="text-text-secondary mt-6">
-          <strong className="text-text">On an iPad or Chromebook?</strong> You
-          can do this entire workshop using{" "}
-          <a
-            href="https://github.com/features/codespaces"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub Codespaces
-          </a>
-          , which gives you a full development environment (terminal, Node.js)
-          in your browser — no installs needed. You'll need a free{" "}
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>{" "}
-          account first. Create a new empty repository on GitHub (no README, no
-          .gitignore), then click the green "Code" button, select the
-          "Codespaces" tab, and create one. The free tier includes 60 hours per
-          month. If you're using Codespaces, skip Step 6 — git and GitHub are
-          already set up for you.
-        </p>
       </section>
 
       {/* Step 1 */}
@@ -210,17 +185,6 @@ export default function Home() {
           typography, spacing, and visual hierarchy.
         </p>
         <CodeBlock copyable>/install-plugin frontend-design</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          After installing, use the <code>/frontend-design</code> command when
-          you want Claude to build or redesign a page:
-        </p>
-        <CodeBlock copyable>/frontend-design Build me a landing page for my photography business with a minimal, elegant feel</CodeBlock>
-        <p className="text-text-secondary mt-4">
-          Be descriptive about the style you want. Mention sites you like, the
-          mood you're going for, and any specific requirements like mobile
-          responsiveness or accessibility. The more context you give, the better
-          the result.
-        </p>
       </section>
 
       {/* Step 3 */}
@@ -313,10 +277,17 @@ export default function Home() {
           And another:
         </p>
         <CodeBlock copyable>{`Change the homepage heading to "Welcome to My Site" and make the background a light gray`}</CodeBlock>
+        <p className="text-text-secondary mt-4 mb-4">
+          If you installed the frontend-design plugin in Step 2, use the{" "}
+          <code>/frontend-design</code> command to get polished, distinctive
+          designs:
+        </p>
+        <CodeBlock copyable>/frontend-design Build me a landing page for my photography business with a minimal, elegant feel</CodeBlock>
         <p className="text-text-secondary mt-4">
-          Be specific about what you want. Review what it writes. Ask it to change
-          things. It's a conversation, not a magic button — the more context you
-          give, the better the results.
+          Be descriptive about the style you want. Mention sites you like, the
+          mood you're going for, and any specific requirements like mobile
+          responsiveness or accessibility. The more context you give, the better
+          the result.
         </p>
       </section>
 
@@ -376,13 +347,6 @@ export default function Home() {
           <code>YOUR-USERNAME</code> with your GitHub username:
         </p>
         <CodeBlock>{`git remote add origin https://github.com/YOUR-USERNAME/my-site.git\ngit push -u origin main`}</CodeBlock>
-        <p className="text-text-secondary mt-4 mb-4">
-          <strong className="text-text">Codespaces users:</strong> If you
-          created your repo and opened a Codespace in the prerequisites step,
-          git is already initialized and connected to GitHub. Just commit and
-          push:
-        </p>
-        <CodeBlock copyable>{`git add .\ngit commit -m "initial project setup"\ngit push`}</CodeBlock>
         <p className="text-text-secondary mt-4">
           This is a one-time setup. From now on, saving your work is just{" "}
           <code>git add</code>, <code>git commit</code>, <code>git push</code>.
@@ -557,7 +521,7 @@ export default function Home() {
         </p>
         <ul className="list-disc list-inside space-y-2 text-text-secondary mb-6">
           <li>
-            <Link to="/contact" className="text-text font-bold">One-on-one consultation</Link> — $50
+            <Link to="/contact" className="text-text font-bold">One-on-one consultation</Link> — $50 per hour
           </li>
         </ul>
         <p className="text-text-secondary mb-4">
