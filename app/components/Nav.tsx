@@ -20,6 +20,9 @@ export function Nav() {
           <NavLink to="/work" className={navClass}>
             Work
           </NavLink>
+          <NavLink to="/about" className={navClass}>
+            About
+          </NavLink>
           <NavLink to="/contact" className={navClass}>
             Contact
           </NavLink>
