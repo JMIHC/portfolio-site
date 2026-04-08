@@ -32,7 +32,7 @@ export default function About() {
           <a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener noreferrer">
             Hermes
           </a>
-          . I care about clean, accessible sites that help people reach their
+          . I care about clean, accessible experiences that help people reach their
           goals.
         </p>
 
