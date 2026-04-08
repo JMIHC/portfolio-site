@@ -77,8 +77,8 @@ export default function Home() {
           <li>
             A <strong className="text-text">terminal</strong> — already on your
             computer. On Mac, open the Terminal app (search for "Terminal" in
-            Spotlight). On Windows, open PowerShell (search for "PowerShell" in
-            the Start menu).
+            Spotlight). On Windows, open Command Prompt (search for "cmd" in
+            the Start menu) or PowerShell.
           </li>
           <li>
             <strong className="text-text">Node.js</strong> installed on your
