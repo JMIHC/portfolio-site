@@ -1,14 +1,13 @@
 import type { Route } from "./+types/resources";
+import { pageMeta } from "~/lib/meta";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Resources | Johnny Cornyn" },
-    {
-      name: "description",
-      content:
-        "Workshop resources — reference links and Claude Code agent/skill downloads.",
-    },
-  ];
+  return pageMeta({
+    title: "Resources | Johnny Cornyn",
+    description:
+      "Workshop resources — reference links and Claude Code agent/skill downloads.",
+    path: "/resources",
+  });
 }
 
 const links = [

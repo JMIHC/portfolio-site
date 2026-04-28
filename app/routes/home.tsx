@@ -1,16 +1,15 @@
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
 import { CodeBlock } from "~/components/CodeBlock";
+import { pageMeta } from "~/lib/meta";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Johnny Cornyn | Build Your Website" },
-    {
-      name: "description",
-      content:
-        "A step-by-step workshop for building, deploying, and updating a modern website with Claude Code, GitHub, React Router, and Netlify.",
-    },
-  ];
+  return pageMeta({
+    title: "Johnny Cornyn | Build Your Website",
+    description:
+      "A step-by-step workshop for building, deploying, and updating a modern website with Claude Code, GitHub, React Router, and Netlify.",
+    path: "/",
+  });
 }
 
 export default function Home() {

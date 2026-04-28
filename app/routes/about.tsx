@@ -1,14 +1,13 @@
 import type { Route } from "./+types/about";
+import { pageMeta } from "~/lib/meta";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "About | Johnny Cornyn" },
-    {
-      name: "description",
-      content:
-        "Johnny Cornyn is a front-end developer and Qi Gong teacher helping people feel grounded in their approach to technology.",
-    },
-  ];
+  return pageMeta({
+    title: "About | Johnny Cornyn",
+    description:
+      "Johnny Cornyn is a front-end developer and Qi Gong teacher helping people feel grounded in their approach to technology.",
+    path: "/about",
+  });
 }
 
 export default function About() {

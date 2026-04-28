@@ -1,13 +1,12 @@
 import type { Route } from "./+types/work";
+import { pageMeta } from "~/lib/meta";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Work | Johnny Cornyn" },
-    {
-      name: "description",
-      content: "A selection of websites built by Johnny Cornyn.",
-    },
-  ];
+  return pageMeta({
+    title: "Work | Johnny Cornyn",
+    description: "A selection of websites built by Johnny Cornyn.",
+    path: "/work",
+  });
 }
 
 const projects = [

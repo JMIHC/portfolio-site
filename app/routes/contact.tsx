@@ -1,15 +1,14 @@
 import type { Route } from "./+types/contact";
 import { useState } from "react";
+import { pageMeta } from "~/lib/meta";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Contact | Johnny Cornyn" },
-    {
-      name: "description",
-      content:
-        "Get in touch with Johnny Cornyn about a project, consultation, or question.",
-    },
-  ];
+  return pageMeta({
+    title: "Contact | Johnny Cornyn",
+    description:
+      "Get in touch with Johnny Cornyn about a project, consultation, or question.",
+    path: "/contact",
+  });
 }
 
 export default function Contact() {
