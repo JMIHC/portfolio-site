@@ -25,6 +25,11 @@ export default function Home() {
         Everything else is free.
       </p>
 
+      <p className="text-sm text-text-secondary mb-12">
+        Downloads and reference links for this workshop are on the{" "}
+        <Link to="/resources">Resources</Link> page.
+      </p>
+
       <nav aria-label="Table of contents" className="mb-12">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-text-muted mb-3">
           Contents
